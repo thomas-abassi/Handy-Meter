@@ -24,7 +24,6 @@ import android.graphics.PointF;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
@@ -45,9 +44,6 @@ public class MeasurementsActivity extends Activity implements OnTouchListener {
 	private List<Point> listMatchingKeypoints = new ArrayList<Point>();
 	private List<Point> listLines = new ArrayList<Point>();
 	private int memPoint = -1;
-
-	// Fields
-	private String TAG = this.getClass().getSimpleName();
 
 	// We can be in one of these 3 states
 	private static final int NONE = 0;
@@ -234,7 +230,6 @@ public class MeasurementsActivity extends Activity implements OnTouchListener {
 		point.set(x / 2, y / 2);
 	}
 
-
 	private Point findCorrespondance(Point p) {
 		Mat frontImage = new Mat(), backImage = new Mat(), tpl, roi = new Mat();
 		Utils.bitmapToMat(currentScene, frontImage);
@@ -279,6 +274,34 @@ public class MeasurementsActivity extends Activity implements OnTouchListener {
 					(int) (startRow + sizeTpl * 1.5),
 					startColRoi,
 					(int) (startCol + sizeTpl * 1.5));
+		} else if(p.x < frontImage.cols() / 3) {
+			startRowRoi = startRow - sizeTpl;
+			startColRoi = startCol;
+			roi = backImage.submat(startRowRoi,
+					(int) (startRow + sizeTpl * 2),
+					startColRoi,
+					(int) (startCol + sizeTpl * 1.5));
+		} else if(p.x > frontImage.cols() * 2 / 3) {
+			startRowRoi = startRow - sizeTpl;
+			startColRoi = startCol - sizeTpl;
+			roi = backImage.submat(startRowRoi,
+					(int) (startRow + sizeTpl * 2),
+					startColRoi,
+					(int) (startCol + sizeTpl * 1.5));
+		} else if(p.y < frontImage.rows() / 3) {
+			startRowRoi = startRow;
+			startColRoi = startCol - sizeTpl;
+			roi = backImage.submat(startRowRoi,
+					(int) (startRow + sizeTpl * 1.5),
+					startColRoi,
+					(int) (startCol + sizeTpl * 2));
+		} else if(p.y > frontImage.rows() * 2 / 3) {
+			startRowRoi = startRow - sizeTpl;
+			startColRoi = startCol - sizeTpl;
+			roi = backImage.submat(startRowRoi,
+					(int) (startRow + sizeTpl * 1.5),
+					startColRoi,
+					(int) (startCol + sizeTpl * 2));
 		} else {
 			startRowRoi = startRow - sizeTpl;
 			startColRoi = startCol - sizeTpl;

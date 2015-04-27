@@ -14,4 +14,5 @@ Use a really new method to measure distances with an Android Device
 - Template matching could be improved
 - Calibration needs to be added as the focal distance is set in hard formy device right now (Check the calibration sample from Opencv for Android)
 - I let the debug traces
+- You needs to download OpenCV 2.4.10, import projects in Eclipse and correct in this project the link tothe OpenCV lib
 

@@ -72,7 +72,7 @@ public class MainActivity extends Activity implements
 
 		setContentView(R.layout.main_surface_view);
 
-		mOpenCvCameraView = (MainView) findViewById(R.id.tutorial3_activity_java_surface_view);
+		mOpenCvCameraView = (MainView) findViewById(R.id.main_activity_java_surface_view);
 
 		mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
 
