@@ -11,6 +11,7 @@ Use a really new method to measure distances with an Android Device
 
 ##!!
 - Distance between 2 pics give sometime wrong results
-- Template matching need to be improved
+- Template matching could be improved
 - Calibration needs to be added as the focal distance is set in hard formy device right now (Check the calibration sample from Opencv for Android)
+- I let the debug traces
 
