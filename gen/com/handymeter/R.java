@@ -21,15 +21,15 @@ public final class R {
         public static final int stopr=0x7f020007;
     }
     public static final class id {
-        public static final int ccam=0x7f050002;
-        public static final int current_scene=0x7f050000;
-        public static final int mob_drone=0x7f050004;
-        public static final int ss_recording=0x7f050003;
-        public static final int tutorial3_activity_java_surface_view=0x7f050001;
+        public static final int ccam=0x7f050001;
+        public static final int current_scene=0x7f050004;
+        public static final int mob_drone=0x7f050003;
+        public static final int ss_recording=0x7f050002;
+        public static final int tutorial3_activity_java_surface_view=0x7f050000;
     }
     public static final class layout {
-        public static final int measurements_layout=0x7f030000;
-        public static final int tutorial3_surface_view=0x7f030001;
+        public static final int main_surface_view=0x7f030000;
+        public static final int measurements_layout=0x7f030001;
     }
     public static final class string {
         public static final int app_name=0x7f040000;

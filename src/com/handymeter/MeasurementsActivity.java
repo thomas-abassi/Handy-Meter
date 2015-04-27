@@ -65,15 +65,15 @@ public class MeasurementsActivity extends Activity implements OnTouchListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.measurements_layout);
 		
-		Mat firstImage = Tutorial3Activity.getFirstImage();
+		Mat firstImage = MainActivity.getFirstImage();
 		currentScene = Bitmap.createBitmap(firstImage.cols(),
 				firstImage.rows(), Bitmap.Config.ARGB_8888);
-		Utils.matToBitmap(Tutorial3Activity.getFirstImage(), currentScene);
+		Utils.matToBitmap(MainActivity.getFirstImage(), currentScene);
 		
-		Mat secondImage = Tutorial3Activity.getSecondImage();
+		Mat secondImage = MainActivity.getSecondImage();
 		currentScene2 = Bitmap.createBitmap(secondImage.cols(),
 				secondImage.rows(), Bitmap.Config.ARGB_8888);
-		Utils.matToBitmap(Tutorial3Activity.getSecondImage(), currentScene2);
+		Utils.matToBitmap(MainActivity.getSecondImage(), currentScene2);
 		
 		ImageView view = (ImageView) findViewById(R.id.current_scene);
 		view.setImageBitmap(currentScene);
@@ -341,8 +341,8 @@ public class MeasurementsActivity extends Activity implements OnTouchListener {
 	}
 
 	private float computeDist(int ind) {
-		double distAccelero = Tutorial3Activity.getDistanceInMeter()[2];
-		float focalLength = Tutorial3Activity.getFocalLength();
+		double distAccelero = MainActivity.getDistanceInMeter()[2];
+		float focalLength = MainActivity.getFocalLength();
 		double dist1 = Math.sqrt(Math.pow(listKeypoints.get(listLines.get(ind).x).x -
 				listKeypoints.get(listLines.get(ind).y).x, 2) +
 				Math.pow(listKeypoints.get(listLines.get(ind).x).y -

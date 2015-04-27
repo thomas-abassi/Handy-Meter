@@ -22,11 +22,11 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
-public class Tutorial3Activity extends Activity implements
+public class MainActivity extends Activity implements
 		CvCameraViewListener2, SensorEventListener {
 	private static final String TAG = "OCVSample::Activity";
 
-	private Tutorial3View mOpenCvCameraView;
+	private MainView mOpenCvCameraView;
 	private Mat lastImage;
 	private static Mat firstImage, secondImage;
 	private SensorManager sensorManager;
@@ -59,7 +59,7 @@ public class Tutorial3Activity extends Activity implements
 		}
 	};
 
-	public Tutorial3Activity() {
+	public MainActivity() {
 		Log.i(TAG, "Instantiated new " + this.getClass());
 	}
 
@@ -70,9 +70,9 @@ public class Tutorial3Activity extends Activity implements
 		super.onCreate(savedInstanceState);
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-		setContentView(R.layout.tutorial3_surface_view);
+		setContentView(R.layout.main_surface_view);
 
-		mOpenCvCameraView = (Tutorial3View) findViewById(R.id.tutorial3_activity_java_surface_view);
+		mOpenCvCameraView = (MainView) findViewById(R.id.tutorial3_activity_java_surface_view);
 
 		mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
 
@@ -153,12 +153,12 @@ public class Tutorial3Activity extends Activity implements
 				firstImage = lastImage.clone();
 				firstTimeOfMeasurement = true;
 
-				sensorManager.registerListener(Tutorial3Activity.this,
+				sensorManager.registerListener(MainActivity.this,
 						sensorManager
 								.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
 						SensorManager.SENSOR_DELAY_FASTEST);
 				
-				sensorManager.registerListener(Tutorial3Activity.this,
+				sensorManager.registerListener(MainActivity.this,
 						sensorManager
 								.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION),
 						SensorManager.SENSOR_DELAY_FASTEST);
@@ -172,14 +172,14 @@ public class Tutorial3Activity extends Activity implements
 				im.setImageDrawable(getResources().getDrawable(
 						R.drawable.startr));
 				secondImage = lastImage.clone();
-				sensorManager.unregisterListener(Tutorial3Activity.this);
+				sensorManager.unregisterListener(MainActivity.this);
 				if (distanceInMeter[2] < 0) {
 					distanceInMeter[2] = -distanceInMeter[2];
 					Mat tmp = firstImage;
 					firstImage = secondImage;
 					secondImage = tmp;
 				}
-				Intent intent = new Intent(Tutorial3Activity.this,
+				Intent intent = new Intent(MainActivity.this,
 						MeasurementsActivity.class);
 				startActivity(intent);
 			}
