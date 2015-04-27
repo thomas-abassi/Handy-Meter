@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Handy Meter</string>
+    <string name="omodel">Open Model</string>
+    <string name="calibrate">Calibrate</string>
+    <string name="smeasurements">Save Measurements</string>
+    <string name="smodels">Save Model</string>
+    <string name="ccam">Change View</string>
+    <string name="startr">Start Recording</string>
+    <string name="stopr">Stop Recording</string>
+    <string name="dcam">Use Drone Cameras</string>
+    <string name="mcam">Use Mobile Cameras</string>
+    <string name="current_scene">Current Scene</string>
+</resources>

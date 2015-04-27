@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.handymeter.Tutorial3View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/tutorial3_activity_java_surface_view" />
+    
+    <ImageView
+        android:id="@+id/ccam"
+    	android:layout_width="wrap_content"
+   		android:layout_height="wrap_content"
+        android:src="@drawable/ccam"
+   		android:contentDescription="@string/ccam"
+   		android:layout_alignParentRight="true"
+   		android:layout_alignParentTop="true"
+   		android:paddingTop="5pt"
+   		android:paddingRight="5pt"
+   		android:visibility="gone" />
+    
+    <ImageView
+        android:id="@+id/ss_recording"
+    	android:layout_width="wrap_content"
+   		android:layout_height="wrap_content"
+        android:src="@drawable/startr"
+   		android:contentDescription="@string/startr"
+   		android:layout_alignWithParentIfMissing="true"
+   		android:layout_below="@+id/ccam"
+   		android:layout_alignParentRight="true"
+   		android:paddingTop="5pt"
+   		android:paddingRight="5pt" />
+    
+    <ImageView
+        android:id="@+id/mob_drone"
+    	android:layout_width="wrap_content"
+   		android:layout_height="wrap_content"
+        android:src="@drawable/dcam"
+   		android:contentDescription="@string/dcam"
+   		android:layout_below="@+id/ss_recording"
+   		android:layout_alignParentRight="true"
+   		android:paddingTop="5pt"
+   		android:paddingRight="5pt"
+   		android:visibility="gone" />
+    
+</RelativeLayout>
